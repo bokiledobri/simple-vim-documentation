@@ -8,5 +8,247 @@
     <title>Very Simple Vim Documentation</title>
 </head>
 <body>
+    <nav id="navbar">
+  <header>Vim Documentation</header>
+  <ul>
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li>
+      <a class="nav-link" href="#What_you_should_already_know"
+        >What you should already know</a
+      >
+    </li>
+    <li>
+      <a class="nav-link" href="#What_is_Vim">What is Vim</a>
+    </li>
+    <li><a class="nav-link" href="#Why_Vim"">Why Vim</a></li>
+    <li><a class="nav-link" href="#Install_on_Windows">Install on Windows</a></li>
+    <li>
+      <a class="nav-link" href="#Install_on_Debian">Install on Debian</a>
+    </li>
+    <li><a class="nav-link" href="#Starting_vim">Starting Vim</a></li>
+    <li><a class="nav-link" href="#Vim_modes">Vim modes</a></li>
+    <li>
+        <a class="nav-link" href="#Create_new_file">Create new file</a>
+    </li>
+    <li><a class="nav-link" href="#Edit_existing_file">Edit existing file</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+      <p>
+      <strong>VIM</strong>proved (henceforth referred to as Vim) editor is one of the popular text editors.
+      It is clone of Vi editor and written by Bram Moolenaar.
+      It is cross platform editor and available on most popular platforms like Windows, Linux, Mac and other UNIX variants.
+      It is command-centric editor, so beginners might find it difficult to work with it.
+      But once you master it, you can solve many complex text-related tasks with few Vim commands.
+      This tutorial is meant to give you the very basic start for your future Vim jurney. It's not meant to be complete by any means.
+      If you are interested, you should check out <a target="_blank" href="https://www.tutorialspoint.com/vim">Tutorialspoint's guide on Vim</a>,
+      most of this content is actually taken from there.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="What_you_should_already_know">
+    <header>What you should already know</header>
+    <article>
+      <p>This guide assumes you have the following basic background:</p>
+
+      <ul>
+        <li>
+            The basic knowlege of computer system.
+        </li>
+        <li>Ability to install, uninstall and configure software packages on given system.</li>
+      </ul>
+    </article>
+  </section>
+  <section class="main-section" id="What_is_Vim">
+    <header>What is Vim</header>
+    <article>
+      <p>
+      Vim is acronym for Vi IMproved. It is free and open source text editor written by Bram Moolenaar.
+      It was first released in 1991 for UNIX variants and its main goal was to provide enhancement to the Vi editor, which was released way back in 1976.
+      </p>
+
+      <p>
+      Vim is considered as clone Vi editor.
+      Like Vi, it is also command centric editor.
+      One of the advantage of learning Vim is – it is available everywhere.
+      Take any UNIX variant like Linux, Mac, HP-UX, AIX and many more, Vim is there by default.
+      Vim traditionally does not have GUI but now there is separate installer called gVim which provides GUI.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Why_Vim">
+    <header>Why Vim</header>
+    <article>
+        <h4>There are some of the important features of Vim:</h4>
+        <ul>
+            <li>Its memory footprint is very low.</li>
+            <li>It is command centric. You can perform complex text related task with few commands</li>
+            <li>It is highly configurable and uses simple text file to store its configuration.</li>
+            <li>There are many plug-in available for Vim. Its functionality can be extended in great manner using these plug-ins.</li>
+            <li>It supports multiple windows. Using this feature screen can be split into multiple windows.</li>
+            <li>Same as multiple windows, it also supports multiple buffers.</li>
+            <li>It supports multiple tabs which allows to work on multiple files.</li>
+            <li>It supports recording features which allows to record and play Vim commands in repeated manner.</li>
+        </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Install_on_Windows">
+    <header>Install on Windows</header>
+    <p>
+    Vim doesn’t have any specific requirements. It is simple software bundle which provides all dependencies.
+    </p>
+    <article>
+    <h4>Installation</h4>
+    <ul>
+        <li>To download Vim visit <a href="https://www.vim.org" target="_blank">vim.org</a></li>
+        <li>Click on Download option from left pane</li>
+        <li>Click on PC - MS-DOS and MS-Windows option</li>
+        <li>Download .exe installer from this page. At the time of writing this tutorial installer name was <a target="_blank" href="ftp://ftp.vim.org/pub/vim/pc/gvim80-586.exe">gvim80.exe</a></li>
+        <li>Double click on installer.</li>
+        <li>Follow the instructions from installer.</li>
+    </ul>
+    </article>
+    <article>
+    <h4>Configuration</h4>
+    <p>Vim stores its configuration in simple text file namely _vimrc and it is located under home directory of user.</p>
+    <ul>
+        <li>To find current user’s home directory execute below command in terminal:
+             <code class="block">$ echo %userprofile%</code>
+        </li>
+        <li>Navigate to home directory and create a new file namely _vimrc. Ensure that this file doesn’t have any extension.</li>
+        <li>Open this file in text editor, enter <code>set nu</code> and save it:
+            </li>
+        <li>Now Vim will show line numbers when file is opened.</li>
+    </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Install_on_Debian">
+      <header>Install on Debian</header>
+        <p>Installation on Linux platform is quite simple as compared to Windows. This section describes installation and configuration on Debian based Linux.</p>
+    <article>
+        <h4>Installation</h4>
+        <ul>
+            <li>Execute below command in terminal:
+            <code class="block">$ sudo apt-get update</code>
+            <code class="block">$ sudo apt-get install vim</code></li>
+            <li>To ensure Vim is correctly installed execute <code>$which vim</code></li>
+            <li>It should print the location of Vim binary. In my case it was <code>/usr/bin/vim</code></li>
+        </ul>
+    </article>
+        <article>
+        <h4>Configuration</h4>
+        Vim stores its configuration in simple text file namely .vimrc and it is located under home directory of user.
+        <ul>
+<li>
+To find current user’s home directory execute below command in terminal:
+<code class="block">$ echo $HOME</code>
+</li>
+<li>Navigate to home directory and create a new file namely .vimrc. Ensure that this file doesn’t have any extension.</li>
+<li>Open this file in text editor, enter <code>set nu</code> and save it</li>
+<li>Now Vim will show line numbers when file is opened. We’ll add more options to this file latter on.</li>
+        </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Starting_vim">
+    <header>Starting Vim</header>
+      <p>
+      Vim is little bit different than today’s GUI based editor. It can be started and used from GUI as well as terminal.
+      </p>
+
+    <article>
+     <h4>Use graphical louncher</h4>
+     <ul>
+        <p>To start Vim from graphical launcher just double click on gVim icon. It will open editor window as follows:</p> <img src="https://www.tutorialspoint.com/vim/images/graphical.jpg" alt="Gvim starting screen"/>
+    </article>
+    <article>
+        <h4>Use terminal</h4>
+        <p>Using Vim from terminal will be identical on Windows as well as Linux platform. Perform following steps to start and quit Vim from terminal:</p>
+        <ul>
+            <li>Open terminal and enter <code>$ vim</code></li>
+            <li>It will open vim in terminal</li>
+            <li>To close this, press Esc key followed by colon(:) and q. In Vim q command stands for quit. This command will be shown in bottom left corner of editor itself. </li>
+        </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Vim_modes">
+    <header>Vim modes</header>
+    <p>Vim supports multiple modes. This section discusses some of the important modes which will be used on day-to-day basis.</p>
+    <article>
+        <h4>Command mode</h4>
+      <p>
+      This is the default mode in which Vim starts.
+      We can enter editor commands in this mode.
+      We can use variety of commands in this mode like copy, paste, delete, replace and many more.
+      We’ll discuss these commands in later sections.
+      </p>
+
+      <p>
+      <strong>NOTE − Here onwards, any Vim command without colon indicates that we are executing that command in command mode.</strong>
+      </p>
+    </article>
+    <article>
+<h4>Insert mode</h4>
+<p>You can use this mode to enter/edit text. To switch from default command to insert mode press i key. It will show current mode in bottom left corner of editor.</p>
+<p>We can enter any text once we are in insert mode. Below image shows this :</p>
+<img src="https://www.tutorialspoint.com/vim/images/modes.jpg" alt="Vim insert mode">
+<p>Use Escape key to switch back to command mode from this mode.</p>
+    </article>
+    <article>
+        <h4>Command Line mode</h4>
+        <p>This mode is also used to enter commands.
+        Commands in this mode starts with colon(:).
+        For instance, in previous section quit command was entered in this mode.
+        We can go to this mode either from command or insert mode.</p>
+        <ul>
+            <li>To switch from command mode to this mode just type colon</li>
+            <li>To switch from insert mode to this mode press Escape and type colon</li>
+        </ul>
+        <p><strong>NOTE − Here onwards, any Vim command starting with colon indicates that we are executing that command in command line mode.</strong></p>
+    </article>
+    <article>
+        <h4>Visual mode</h4>
+        <p>In this mode we can visually select text and run commands on selected sections.</p>
+        <ul>
+            <li>To switch from command mode to visual mode type v</li>
+            <li>To switch from any other mode to visual mode first switch back to command mode by pressing Escape, then type v to switch to visual mode</li>
+        </ul>
+        <p>In below image bottom left corner shows visual mode.</p>
+        <img src="https://www.tutorialspoint.com/vim/images/commandline.jpg" alt="visual mode">
+    </article>
+  </section>
+  <section class="main-section" id="Create_new_file">
+    <header>Create New File</header>
+    <article>
+    <p>Perform below steps to create and save new file:</p>
+    <ul>
+        <li>Execute <code>$ vim</code> to open Vim</li>
+        <li>Type <code>:edit message.txt</code>in vim</li>
+        <li>Switch to insert mode with <code>i</code></li>
+        <li>Enter some text</li>
+        <li>Switch back to comand mode by pressing Esc</li>
+        <li>Type <code>:w</code>and press enter to write changes to a file</li>
+        <li>Quit vim by typing <code>:q</code> and pressing Enter</li>
+    </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Edit_existing_file">
+    <header>Edit existing file</header>
+    <article>
+    <p>Perform below steps to edit existing file:</p>
+    <ul>
+        <li>Type <code>$ vim message.txt</code>to open file in vim</li>
+        <li>Switch to insert mode with <code>i</code></li>
+        <li>Enter some text</li>
+        <li>Switch back to comand mode by pressing Esc</li>
+        <li>Quit vim without saving by typing <code>:q!</code> and pressing Enter</li>
+        <li>Or type <code>:wq</code>and press enter to write changes to a file and than quit</li>
+    </ul>
+    </article>
+  </section>
+</main>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
